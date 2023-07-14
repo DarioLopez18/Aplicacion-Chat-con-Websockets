@@ -6,7 +6,7 @@ import {Server} from 'socket.io' //Este Server se creara a partir del server HTT
 
 const app = express()
 
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 
 const httpServer = app.listen(PORT,console.log(`Listening on PORT ${PORT}`)) //Solo el server de http
 
