@@ -1,0 +1,90 @@
+Aplicacion chat con websockets
+
+
+->Desarrollo de chat con websockets
+
+->Deploy de nuestra primera aplicacion con glitch.com
+
+Objetivos de la clase:
+
+->Desarrollar una aplicacion chat con websockets
+
+->Comprender el uso de Sweetalert como sistema de autenticacion intermedio
+
+->Hacer Deploy de nuestra primera aplicacion Glitch.com 
+
+Glosario:
+
+->websockets: Protocolo de comunicacion que permite una sesion activa entre cliente y servidor
+
+->hanshake: acuerdo entre cliente y servidor que permite establecer una conexion abierta entre ambos puntos
+
+->socket.io: Listener de eventos que involucren a los sockets. El listener debe escuchar un evento de nombre 
+identico al emitido por el otro punto. 
+
+->socket.emit: emisor de eventos tanto para cliente como para servidor. El emisor debe emitir un evento con
+nombre identico al que se esta escuchando del otro lado.
+
+->socketServer.emit: emisor de eventos del servidor para todos los clientes
+
+->socket.broadcast.emit: emisor de eventos del servidor para todos los clientes, a excepcion del sockets 
+raiz del cual se llama al evento. 
+
+->socket.broadcast.emit: emisor de eventos del servidor para todos los clientes, a excepcion del socket raiz 
+del cual se llama el evento. 
+
+Aplicaciones websockets
+    ->Servidor express
+    ->Sweetalert2 
+        ->Vista de autenticacion
+    ->Deploy
+        ->glitch
+        ->repositorio github
+
+Aplicacion chat con websockets
+
+Como aprendimos la clase pasada, las aplicaciones de websockets son bastante amplias. Una de las mejores 
+formas de comprender su aplicacion, es realizando el chat comunitario.
+
+Nuestro chat comunitario contara con:
+
+->Una vista que cuente con un formulario para poder identificarse. El usuario podra elegir el nombre de usuario
+con el que aparecera en el chat
+
+->Un cuadro de input sobre el cual el usuario podra escribir un mensaje
+
+->Un panel donde todos los usuarios conectados podran visualizar los mensajes en tiempo realizando
+
+->Una vez desarrollada la aplicacion,subiremos el codigo a glitch.com, para que todos puedan utilizarlo.
+
+1-Tener listo un servidor express
+
+Para poder trabajar con websockets en express,necesitamos un servidor para que trabajen en conjunto de manera
+que levantemos un servidor express como ya lo conocemos.
+
+Utilizaremos la misma estructura de plantillas trabajadas con handdlebars, de manera que debemos contar con 
+la arquitectura.
+
+La estructura inicial debera ser como lo indica la imagen.
+
+src
+    public
+    routes
+    views
+app.js 
+utils.js
+
+2-Realizar las instalaciones
+
+Una vez que tenemos la estructura de carpetas inicial, realizamos la instalacion de nuestros elementos cruciales
+para trabajar con websockets
+
+express: nuestro servidor principal
+express-handlebars: para las plantillas donde colocaremos el socket del lado del cliente
+socket.io: para trabajar con websockets, tanto para el cliente como para el servidor 
+
+Sweetalert2 nos permitira utilizar alertas mas esteticas y con mas funcionalidades. En este caso la Utilizaremos
+para dos cosas particulares:
+
+    ->Para bloquear la pantalla del chat hasta que el usuario se identifique
+    ->Para notificar a los usuarios cuando alguien se conecte al chat. 
